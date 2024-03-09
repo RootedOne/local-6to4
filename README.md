@@ -35,7 +35,7 @@ The choice of using a GRE (Generic Routing Encapsulation) tunnel is made because
    ```
 2. Add the following content to the file, replacing the placeholders with the appropriate values:
 ```sh
-    network:
+network:
   version: 2
   renderer: networkd
   ethernets:
@@ -51,7 +51,6 @@ The choice of using a GRE (Generic Routing Encapsulation) tunnel is made because
         - [Server1_IPv6_Tunnel_Address]/64
   ```
 3. Save and close the file.
-
 4. Apply the new configuration:
     ```sh
     sudo netplan apply
