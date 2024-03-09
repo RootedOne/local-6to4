@@ -51,7 +51,8 @@ network:
         - [Server1_IPv6_Tunnel_Address]/64
   ```
 3. Save and close the file.
-4. Apply the new configuration:
+4. 
+5. Apply the new configuration:
     ```sh
     sudo netplan apply
     ```
@@ -62,7 +63,7 @@ network:
 1. Create a new file in the `/etc/netplan` directory named `gre-tunnel.yaml`:
 
 2. Add the following content to the file, replacing the placeholders with the appropriate values:
-    ```sh
+```sh
     network:
   version: 2
   renderer: networkd
@@ -77,7 +78,7 @@ network:
       local: [Server2_IPv4_Address]
       addresses:
         - [Server2_IPv6_Tunnel_Address]/64
-    ```
+```
 3. Save and close the file.
 
 4. Apply the new configuration:
@@ -92,9 +93,13 @@ After applying the configuration on both servers, the IPv6 GRE tunnel should be 
 You can verify the tunnel interface status and connectivity using the following commands:
     ```sh
     ip -6 addr show
+        ```
+        ```sh
     ip -6 route show
+        ```
+      ```sh
     ip -6 neigh show
-    ```
+        ```
 
 ### Note
 
