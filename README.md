@@ -34,13 +34,13 @@ The choice of using a GRE (Generic Routing Encapsulation) tunnel is made because
    sudo nano /etc/netplan/gre-tunnel.yaml
    ```
 2. Add the following content to the file, replacing the placeholders with the appropriate values:
-    ```sh
+3. ```sh
     network:
   version: 2
   renderer: networkd
   ethernets:
-    # Your existing Ethernet interface configuration goes here
-    # ...
+     Your existing Ethernet interface configuration goes here
+     ...
 
   tunnels:
     gre1:
@@ -49,7 +49,7 @@ The choice of using a GRE (Generic Routing Encapsulation) tunnel is made because
       local: [Server1_IPv4_Address]
       addresses:
         - [Server1_IPv6_Tunnel_Address]/64
-    ```
+```
 3. Save and close the file.
 
 4. Apply the new configuration:
